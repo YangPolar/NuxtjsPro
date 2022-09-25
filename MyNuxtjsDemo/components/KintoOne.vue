@@ -1,11 +1,20 @@
 <template>
-  <v-container>
-    <v-app-bar>KINTO ONEの魅力</v-app-bar>
+  <v-container fluid>
+    <h4 class="header">KINTO ONEの魅力</h4>
     <p class="snippet">マイカーにかかる費用がコミコミ&定額<br>WEBで申し込んだ後は販売店で受け取るだけ
       手続き関係は気にしなくてOK<br>
       年齢・運転者に制限なし充実の自動車保険</p>
-    <button class="button btn">車種ラインアップ</button>
-    <v-img src="kv_02@2x.jpg"></v-img>
+    <!--<button class="button btn">契約プラン</button>-->
+    <v-btn
+      class="button"
+      color="rgb(0, 112, 141)"
+      nuxt
+      to="/inspire"
+    >
+      契約プラン
+    </v-btn>
+    <v-img v-bind:src="require('/assets/images/kv_02@2x.jpg')"></v-img>
+    <!--<img src="~/assets/images/kv_02@2x.jpg">-->
   </v-container>
 </template>
 
@@ -25,7 +34,7 @@
     justify-content: space-between;
   }
   .text-container {
-    width: 50%;
+    width: 90%;
     margin-top: 4rem;
   }
   .header {
@@ -49,6 +58,8 @@
   }
   .button {
     padding: 1rem 4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     border-radius: 100rem;
     background-color: rgb(0, 112, 141);
     color: white;
