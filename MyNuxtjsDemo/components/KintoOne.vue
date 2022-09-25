@@ -13,14 +13,38 @@
     >
       契約プラン
     </v-btn>
-    <v-img v-bind:src="require('/assets/images/kv_02@2x.jpg')"></v-img>
-    <!--<img src="~/assets/images/kv_02@2x.jpg">-->
+    <!--<v-img v-bind:src="require('/assets/images/kv_02@2x.jpg')"></v-img>
+    <img src="~/assets/images/kv_02@2x.jpg">-->
+    <v-carousel>
+      <v-carousel-item
+        v-for="(item,i) in items"
+        :key="i"
+        :src="require(`@/assets/images/${item.src}`)"
+        reverse-transition="fade-transition"
+        transition="fade-transition"
+      ></v-carousel-item>
+    </v-carousel>
   </v-container>
 </template>
 
 <script>
   export default {
 
+    data () {
+      return {
+        items: [
+          {
+            src: 'kv_01@2x.jpg',
+          },
+          {
+            src: 'kv_02@2x.jpg',
+          },
+          {
+            src: 'kv_03@2x.jpg',
+          },
+        ],
+      }
+    },
   }
 </script>
 

@@ -30,3 +30,4 @@ aws s3api put-bucket-policy --bucket nuxtjspro --policy file://S3policy.json
 
 aws s3 cp dist s3://nuxtjspro --recursive
 
+

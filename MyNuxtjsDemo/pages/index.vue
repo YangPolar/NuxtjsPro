@@ -2,7 +2,20 @@
   <v-row justify="center" align="center">
     <v-col cols="12" sm="18" md="16">
       <LazyKintoOne />
-      <LazyCarLineDisplay />
+      <div>
+        <h4 class="header">トヨタ車ラインアップ</h4>
+        <v-banner
+          single-line
+          :sticky="sticky">
+          ※ 全て税込表示です<br />
+          ※ 新型コロナウイルス感染拡大等に伴う部品供給不足により、現在表記されている納期より＋1ヶ月程度のお時間がかかる場合がございます
+        </v-banner>
+      </div>
+      <LazyCarLineDisplay
+        v-for="carInfo in carLineDisplayData"
+        :key="carInfo.id"
+        :carSection="carInfo"
+      />
       <!--<v-card class="logo py-4 d-flex justify-center">
         <NuxtLogo />
         <VuetifyLogo />
@@ -79,7 +92,19 @@
 </template>
 
 <script>
+import { carLineSection } from "@/assets/data.js"
 export default {
-  name: 'IndexPage'
+  data() {
+    return {
+      carLineDisplayData : carLineSection
+    }
+  }
 }
 </script>
+
+<style scoped>
+.header {
+  font-size: 1.15rem;
+  margin-top: 0.4rem;
+}
+</style>

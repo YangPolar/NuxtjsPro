@@ -1,16 +1,12 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <img
-        src="/v.png"
-        alt="Vuetify.js"
-        class="mb-5"
-      >
+      <v-img v-bind:src="require('/assets/images/kinto_logo.svg')"></v-img>
       <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
+        &#8220;If you have any questions, please contact us by ml-pd-gkcpn_info@kinto-mobility.jp.&#8221;
         <footer>
           <small>
-            <em>&mdash;John Johnson</em>
+            <em>&mdash;Yang liming</em>
           </small>
         </footer>
       </blockquote>
