@@ -1,7 +1,9 @@
 <template>
   <div class="car">
     <!--<img class="image" :src="require(`@/assets/images/${car.image || 'lineup_raize.png'}`)" alt="">-->
-    <v-img v-bind:src="require(`@/assets/images/${car.image || 'lineup_raize.png'}`)"></v-img>
+    <NuxtLink :to="`/Cars/${car.id}`">
+      <v-img v-bind:src="require(`@/assets/images/${car.image || 'lineup_raize.png'}`)"></v-img>
+    </NuxtLink>
     <h6 class="header">
       {{ car.title }}
     </h6>
@@ -37,5 +39,9 @@ export default {
   }
   .snippet {
     color: grey
+  }
+  .snippet.hover {
+    color: aquamarine;
+    text-decoration: none;
   }
 </style>
